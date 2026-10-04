@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 350" width="100%" height="100%">
+  <defs>
+    <linearGradient id="blessGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF3E0" />
+      <stop offset="50%" stop-color="#FFE0B2" />
+      <stop offset="100%" stop-color="#FFCDD2" />
+    </linearGradient>
+    <radialGradient id="haloGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFF" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#FFE082" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="400" height="350" fill="url(#blessGrad)"/>
+
+  <!-- Golden warm glowing aura -->
+  <circle cx="200" cy="160" r="110" fill="url(#haloGlow)"/>
+
+  <!-- Gentle holding hands / intertwined fingers with blessing glow -->
+  <g transform="translate(130, 80)">
+    <!-- Heart above hands -->
+    <path d="M 70 50 C 60 30 35 35 35 55 C 35 75 70 95 70 95 C 70 95 105 75 105 55 C 105 35 80 30 70 50 Z" fill="#FF5252"/>
+    <circle cx="70" cy="40" r="28" fill="#FFF" opacity="0.3"/>
+
+    <!-- Left hand -->
+    <path d="M 10 170 Q 40 140 60 120 Q 75 110 80 125 L 50 185 Z" fill="#FFCCBC"/>
+    <!-- Right hand gently holding -->
+    <path d="M 130 170 Q 100 140 80 120 Q 65 110 60 125 L 90 185 Z" fill="#FFE0B2"/>
+
+    <!-- Sparkles between hands -->
+    <circle cx="70" cy="115" r="6" fill="#FFD54F"/>
+    <circle cx="70" cy="115" r="12" fill="#FFF" opacity="0.4"/>
+  </g>
+
+  <!-- Floating stars & blessings -->
+  <text x="60" y="90" font-size="28">✨</text>
+  <text x="320" y="100" font-size="28">🕊️</text>
+  <text x="80" y="240" font-size="24">🌸</text>
+  <text x="310" y="230" font-size="26">💖</text>
+  <text x="190" y="60" font-size="26">✨</text>
+
+  <text x="200" y="322" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="15" fill="#BF360C" text-anchor="middle">"Blessings together ✨🙏💖"</text>
+</svg>

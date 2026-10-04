@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 350" width="100%" height="100%">
+  <defs>
+    <linearGradient id="hoodieBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCE4EC" />
+      <stop offset="50%" stop-color="#F8BBD0" />
+      <stop offset="100%" stop-color="#E1BEE7" />
+    </linearGradient>
+    <linearGradient id="hoodieGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4A5568" />
+      <stop offset="100%" stop-color="#2D3748" />
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#4A5568" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <rect width="400" height="350" fill="url(#hoodieBg)"/>
+
+  <!-- Aesthetic background sparkles & stars -->
+  <text x="60" y="70" font-size="24">✨</text>
+  <text x="320" y="80" font-size="28">💖</text>
+  <text x="70" y="270" font-size="26">🌸</text>
+  <text x="330" y="260" font-size="24">✨</text>
+
+  <!-- Cute Girl in Oversized Hoodie Character -->
+  <g filter="url(#softShadow)" transform="translate(100, 30)">
+    <!-- Hair back -->
+    <path d="M 60 70 C 40 40 160 40 140 70 C 160 120 170 180 140 190 C 130 150 120 130 100 130 C 80 130 70 150 60 190 C 30 180 40 120 60 70 Z" fill="#5D4037"/>
+
+    <!-- Cute Head & Face -->
+    <ellipse cx="100" cy="85" rx="32" ry="36" fill="#FFE0B2"/>
+    <!-- Blush -->
+    <circle cx="82" cy="94" r="7" fill="#FF80AB" opacity="0.6"/>
+    <circle cx="118" cy="94" r="7" fill="#FF80AB" opacity="0.6"/>
+    <!-- Happy eyes -->
+    <path d="M 76 84 Q 82 78 88 84" stroke="#3E2723" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <path d="M 112 84 Q 118 78 124 84" stroke="#3E2723" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <!-- Cute smile -->
+    <path d="M 95 99 Q 100 104 105 99" stroke="#E91E63" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Bangs -->
+    <path d="M 68 70 Q 100 55 132 70 Q 100 78 68 70 Z" fill="#5D4037"/>
+
+    <!-- Oversized Dark Grey / Charcoal Boyfriend Hoodie -->
+    <!-- Hood around neck -->
+    <path d="M 60 110 C 60 90 140 90 140 110 L 155 140 C 135 150 65 150 45 140 Z" fill="#374151"/>
+    
+    <!-- Big Cozy Body -->
+    <path d="M 45 130 L 155 130 L 165 240 C 165 255 35 255 35 240 Z" fill="url(#hoodieGrad)"/>
+    
+    <!-- Kangaroo Pocket -->
+    <path d="M 60 195 L 140 195 L 145 235 L 55 235 Z" fill="#1F2937" rx="8"/>
+    <!-- Hoodie Strings -->
+    <path d="M 90 125 L 88 165" stroke="#E5E7EB" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 110 125 L 112 165" stroke="#E5E7EB" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- Long Cozy Sleeves Covering Hands -->
+    <path d="M 45 130 L 20 200 C 15 215 35 225 45 210 L 60 160 Z" fill="url(#hoodieGrad)"/>
+    <path d="M 155 130 L 180 200 C 185 215 165 225 155 210 L 140 160 Z" fill="url(#hoodieGrad)"/>
+    <!-- Long cuffs hiding fingers -->
+    <ellipse cx="28" cy="210" rx="9" ry="6" fill="#1F2937"/>
+    <ellipse cx="172" cy="210" rx="9" ry="6" fill="#1F2937"/>
+
+    <!-- Cute Heart Print on Hoodie -->
+    <path d="M 100 170 C 93 160 83 162 83 172 C 83 182 100 192 100 192 C 100 192 117 182 117 172 C 117 162 107 160 100 170 Z" fill="#FF4081"/>
+    <text x="100" y="180" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="8" fill="#FFF" text-anchor="middle">HIS</text>
+  </g>
+
+  <!-- Caption on SVG -->
+  <text x="200" y="322" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="15" fill="#4A148C" text-anchor="middle">"His hoodie > literally anything else 🧥💖"</text>
+</svg>

@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Venu! 💖✨</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- 🌟 Entry Overlay (Audio Permission & Intro) -->
+    <div id="entry-overlay">
+        <div class="entry-content glass-card">
+            <div class="entry-icon-bounce">🎁</div>
+            <h1>Ready for Your Surprise, Venu? 💖</h1>
+            <p>Put on your headphones for the best experience & enter your celebration!</p>
+            <button id="enter-btn" class="glow-btn">Enter Party 🎉</button>
+        </div>
+    </div>
+
+    <!-- ⏳ Countdown Overlay (Set to October 8th) -->
+    <div id="countdown-overlay">
+        <div class="countdown-content glass-card">
+            <span class="bday-badge">✨ Venu's Special Celebration ✨</span>
+            <h1>The Big Day is Almost Here! 🎂</h1>
+            <p class="wait-msg">Counting down to October 8th, Venu! 💖</p>
+            <div id="timer">
+                <div class="time-box">
+                    <span id="days">00</span>
+                    <p>Days</p>
+                </div>
+                <div class="time-box">
+                    <span id="hours">00</span>
+                    <p>Hours</p>
+                </div>
+                <div class="time-box">
+                    <span id="minutes">00</span>
+                    <p>Mins</p>
+                </div>
+                <div class="time-box">
+                    <span id="seconds">00</span>
+                    <p>Secs</p>
+                </div>
+            </div>
+
+            <!-- Secret Sneak Peek Pass (Allows testing and exploring before Oct 8) -->
+            <div class="countdown-actions">
+                <button id="preview-btn" class="preview-btn">
+                    <i class="fas fa-sparkles"></i> ✨ Sneak Peek / Preview Mode ✨
+                </button>
+                <p class="preview-hint">Tap here to unlock and explore the celebration now!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 🌟 Global Background Canvases -->
+    <canvas id="star-map"></canvas>
+    <canvas id="mouse-trail"></canvas>
+
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" aria-label="Toggle Dark Mode" title="Toggle Theme">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- 🎵 Modern Floating Vinyl Music Player -->
+    <div class="music-pill-widget" id="music-pill">
+        <div class="vinyl-disc" id="vinyl-disc">
+            <div class="vinyl-groove"></div>
+            <div class="vinyl-center">💖</div>
+        </div>
+        <div class="music-info">
+            <span class="music-title">Venu's Birthday Melodies 🎶</span>
+            <div class="music-wave" id="music-wave">
+                <span></span><span></span><span></span><span></span>
+            </div>
+        </div>
+        <button id="music-toggle-btn" class="music-control-btn" aria-label="Toggle Music" title="Play / Pause">
+            <i class="fas fa-play"></i>
+        </button>
+        <div class="volume-slider-container">
+            <i class="fas fa-volume-down volume-icon"></i>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.05" value="0.6">
+        </div>
+    </div>
+
+    <!-- 1️⃣ Hero Section with Interactive Particle Text -->
+    <header id="hero" class="hero parallax-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="bday-tag">✨ October 8th · Special Day ✨</div>
+            <div id="particle-container">
+                <canvas id="text-particles"></canvas>
+            </div>
+
+            <p class="subtitle fade-in-up delay-1">To my favorite person in the entire universe 💖</p>
+            <div class="hero-cta fade-in-up delay-2">
+                <a href="#games" class="action-pill"><i class="fas fa-gamepad"></i> Play Venu's Games</a>
+                <a href="#cake-section" class="action-pill secondary"><i class="fas fa-birthday-cake"></i> Blow Candles</a>
+            </div>
+            <p class="scroll-prompt fade-in-up delay-3">
+                <i class="fas fa-chevron-down bounce"></i> Scroll down to explore your party ✨
+            </p>
+        </div>
+
+        <div class="floating-elements">
+            <div class="shape heart">💖</div>
+            <div class="shape star">✨</div>
+            <div class="shape heart">🌸</div>
+            <div class="shape sparkle">🧸</div>
+            <div class="shape heart">🍰</div>
+        </div>
+    </header>
+
+    <!-- 2️⃣ About Her Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">Who is She? ✨</h2>
+            <div class="about-content glass-panel">
+                <div class="about-text">
+                    <p class="reveal-text">
+                        <strong>Venu</strong>, you are the sunshine that brightens my darkest days. Your smile is pure magic,
+                        your laugh is my absolute favorite sound, and having you in my life is the greatest gift.
+                        Thank you for simply being your incredible, loving, radiant self!
+                    </p>
+                    <div class="qualities">
+                        <span class="badgem badge-pink"><i class="fas fa-heart"></i> Cutest Smile 😊</span>
+                        <span class="badgem badge-purple"><i class="fas fa-crown"></i> My Whole World 🌍</span>
+                        <span class="badgem badge-peach"><i class="fas fa-sparkles"></i> Pure Magic ✨</span>
+                        <span class="badgem badge-rose"><i class="fas fa-home"></i> My Safe Haven 🏡</span>
+                        <span class="badgem badge-gold"><i class="fas fa-star"></i> Sweet & Sassy 🌸</span>
+                    </div>
+                </div>
+                <div class="about-img-container">
+                    <div class="polaroid-wrapper">
+                        <div class="polaroid-tape"></div>
+                        <div class="polaroid-frame" id="profile-polaroid">
+                            <img src="images/venu-profile.svg" alt="Venu" class="profile-pic" id="profile-img">
+                            <label class="photo-upload-overlay" title="Upload real photo">
+                                <i class="fas fa-camera"></i>
+                                <span>Change Photo</span>
+                                <input type="file" accept="image/*" class="photo-input" data-target="profile-img">
+                            </label>
+                            <p class="polaroid-caption">Venu · The Birthday Girl 💖</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3️⃣ Memory Polaroid Wall (6 Picture Frames) -->
+    <section id="gallery" class="section alt-bg">
+        <div class="container">
+            <h2 class="section-title">Our Favorite Moments 📸</h2>
+            <p class="section-subtitle">A collection of our sweetest memories. Click the camera icon on any photo to upload your favorite real pictures!</p>
+            <div class="gallery-grid">
+                <!-- Polaroid 1 -->
+                <div class="polaroid-card">
+                    <div class="pin">📌</div>
+                    <div class="img-box">
+                        <img src="images/memory1.svg" alt="Blessings Together" id="img-mem-1">
+                        <label class="photo-upload-btn" title="Add real photo">
+                            <i class="fas fa-camera"></i>
+                            <input type="file" accept="image/*" class="photo-input" data-target="img-mem-1">
+                        </label>
+                    </div>
+                    <p class="caption">"Blessings together ✨"</p>
+                </div>
+
+                <!-- Polaroid 2 -->
+                <div class="polaroid-card">
+                    <div class="tape"></div>
+                    <div class="img-box">
+                        <img src="images/memory2.svg" alt="Unforgettable" id="img-mem-2">
+                        <label class="photo-upload-btn" title="Add real photo">
+                            <i class="fas fa-camera"></i>
+                            <input type="file" accept="image/*" class="photo-input" data-target="img-mem-2">
+                        </label>
+                    </div>
+                    <p class="caption">"Unforgettable sunset moments together 🌅"</p>
+                </div>
+
+                <!-- Polaroid 3 -->
+                <div class="polaroid-card">
+                    <div class="pin">📌</div>
+                    <div class="img-box">
+                        <img src="images/memory3.svg" alt="Just Us" id="img-mem-3">
+                        <label class="photo-upload-btn" title="Add real photo">
+                            <i class="fas fa-camera"></i>
+                            <input type="file" accept="image/*" class="photo-input" data-target="img-mem-3">
+                        </label>
+                    </div>
+                    <p class="caption">"Just being goofy & completely ourselves 🧸"</p>
+                </div>
+
+                <!-- Polaroid 4 -->
+                <div class="polaroid-card">
+                    <div class="tape"></div>
+                    <div class="img-box">
+                        <img src="images/memory4.svg" alt="Best Vibes" id="img-mem-4">
+                        <label class="photo-upload-btn" title="Add real photo">
+                            <i class="fas fa-camera"></i>
+                            <input type="file" accept="image/*" class="photo-input" data-target="img-mem-4">
+                        </label>
+                    </div>
+                    <p class="caption">"Under the stars with my whole universe ✨"</p>
+                </div>
+
+                <!-- Polaroid 5 -->
+                <div class="polaroid-card">
+                    <div class="pin">📌</div>
+                    <div class="img-box">
+                        <img src="images/memory5.svg" alt="His Hoodie" id="img-mem-5">
+                        <label class="photo-upload-btn" title="Add real photo">
+                            <i class="fas fa-camera"></i>
+                            <input type="file" accept="image/*" class="photo-input" data-target="img-mem-5">
+                        </label>
+                    </div>
+                    <p class="caption">"His hoodie > literally anything else 🧥💖"</p>
+                </div>
+
+                <!-- Polaroid 6 -->
+                <div class="polaroid-card">
+                    <div class="tape"></div>
+                    <div class="img-box">
+                        <img src="images/memory6.svg" alt="Cozy Moments" id="img-mem-6">
+                        <label class="photo-upload-btn" title="Add real photo">
+                            <i class="fas fa-camera"></i>
+                            <input type="file" accept="image/*" class="photo-input" data-target="img-mem-6">
+                        </label>
+                    </div>
+                    <p class="caption">"Every cozy, sweet moment spent with you 🍰💖"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4️⃣ 🎮 INTERACTIVE ARCADE FOR VENU -->
+    <section id="games" class="section">
+        <div class="container text-center">
+            <span class="game-tag">🎉 Play & Win Venu!</span>
+            <h2 class="section-title">Venu's Love Arcade 🎮</h2>
+            <p class="section-subtitle">Play interactive mini-games, earn love points, and unlock cute boyfriend passes!</p>
+
+            <!-- Game Tabs Switcher -->
+            <div class="game-tabs-nav">
+                <button class="game-tab-btn active" data-game="catch"><i class="fas fa-heart"></i> Catch the Love</button>
+                <button class="game-tab-btn" data-game="wheel"><i class="fas fa-dharmachakra"></i> Lucky Wheel</button>
+                <button class="game-tab-btn" data-game="scratch"><i class="fas fa-ticket-alt"></i> Scratch Coupons</button>
+                <button class="game-tab-btn" data-game="quiz"><i class="fas fa-question-circle"></i> Couple Quiz</button>
+            </div>
+
+            <!-- Game Panel 1: Catch the Love -->
+            <div class="game-panel active" id="game-panel-catch">
+                <div class="game-hud">
+                    <div class="hud-item"><span class="hud-label">Score:</span> <strong id="catch-score">0</strong></div>
+                    <div class="hud-item"><span class="hud-label">Target:</span> <strong>100 Pts</strong></div>
+                    <div class="hud-item"><span class="hud-label">Multiplier:</span> <strong id="catch-combo">x1</strong></div>
+                </div>
+                <div class="canvas-game-wrapper">
+                    <canvas id="heart-catch-canvas" width="600" height="380"></canvas>
+                    <div id="catch-game-overlay" class="game-start-overlay">
+                        <div class="overlay-modal">
+                            <h3>Catch Falling Hearts & Treats! 💖</h3>
+                            <p>Move the basket with your mouse, finger, or arrow keys to catch falling treats!</p>
+                            <button id="start-catch-btn" class="glow-btn">Start Game 🚀</button>
+                        </div>
+                    </div>
+                </div>
+                <p class="game-instructions">Tip: Touch & slide or move your mouse to catch hearts, cupcakes & stars!</p>
+            </div>
+
+            <!-- Game Panel 2: Spin the Wheel -->
+            <div class="game-panel" id="game-panel-wheel">
+                <div class="wheel-outer-wrapper">
+                    <div class="wheel-pointer">▼</div>
+                    <canvas id="wheel-canvas" width="380" height="380"></canvas>
+                </div>
+                <div class="wheel-controls">
+                    <button id="spin-wheel-btn" class="glow-btn">Spin For Venu! 🎡</button>
+                    <p class="wheel-hint">Spin to win guaranteed date night and cuddle passes!</p>
+                </div>
+            </div>
+
+            <!-- Game Panel 3: Scratch-Off Coupons -->
+            <div class="game-panel" id="game-panel-scratch">
+                <p class="scratch-instruction">Scratch off the rose-gold coating with your finger or mouse to reveal your passes!</p>
+                <div class="scratch-grid">
+                    <!-- Scratch Card 1 -->
+                    <div class="scratch-card">
+                        <div class="scratch-reward">
+                            <span class="scratch-emoji">🛍️</span>
+                            <h4>Shopping Spree Pass</h4>
+                            <p>1 Guilt-free shopping day where I carry all your bags!</p>
+                            <span class="coupon-code">CODE: VENU-QUEEN-01</span>
+                        </div>
+                        <canvas class="scratch-canvas" data-id="1" width="280" height="180"></canvas>
+                    </div>
+
+                    <!-- Scratch Card 2 -->
+                    <div class="scratch-card">
+                        <div class="scratch-reward">
+                            <span class="scratch-emoji">🥞</span>
+                            <h4>Breakfast In Bed</h4>
+                            <p>Warm pancakes, hot coffee & unlimited morning cuddles!</p>
+                            <span class="coupon-code">CODE: VENU-SWEET-02</span>
+                        </div>
+                        <canvas class="scratch-canvas" data-id="2" width="280" height="180"></canvas>
+                    </div>
+
+                    <!-- Scratch Card 3 -->
+                    <div class="scratch-card">``
+                        <div class="scratch-reward">
+                            <span class="scratch-emoji">✈️</span>
+                            <h4>Spontaneous Getaway</h4>
+                            <p>A surprise weekend road trip to wherever your heart desires!</p>
+                            <span class="coupon-code">CODE: VENU-TRIP-03</span>
+                        </div>
+                        <canvas class="scratch-canvas" data-id="3" width="280" height="180"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game Panel 4: Couple Trivia Quiz -->
+            <div class="game-panel" id="game-panel-quiz">
+                <div class="quiz-container glass-card" id="quiz-container">
+                    <div class="quiz-header">
+                        <span id="quiz-progress">Question 1 of 4</span>
+                        <div class="quiz-meter"><div id="quiz-meter-fill"></div></div>
+                    </div>
+                    <div class="quiz-body">
+                        <h3 id="quiz-question-text">Who is the absolute boss in this relationship? 😉</h3>
+                        <div class="quiz-options-list" id="quiz-options-list">
+                            <!-- Injected dynamically -->
+                        </div>
+                    </div>
+                    <div id="quiz-reaction" class="quiz-reaction hidden"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5️⃣ 3D Memory Flipbook -->
+    <section id="letter" class="section alt-bg">
+        <div class="container text-center">
+            <h2 class="section-title">A Book of Our Story 📖</h2>
+            <p class="section-subtitle">Click the pages to flip through our journey!</p>
+            <div class="book-container">
+                <div class="book">
+                    <!-- Cover -->
+                    <div class="page cover-front" style="--i:0">
+                        <div class="front">
+                            <h1>For Venu 💖</h1>
+                            <p>A Birthday Story</p>
+                            <span class="book-sparkle">✨ Tap to open ✨</span>
+                        </div>
+                        <div class="back">
+                            <h2>Chapter 1</h2>
+                            <p>The day you came into my life...</p>
+                        </div>
+                    </div>
+                    <!-- Page 1 -->
+                    <div class="page" style="--i:1">
+                        <div class="front">
+                            <p class="handwriting-title">My Dearest Venu,</p>
+                            <p>On your special day, I want you to know how deeply cherished you are. You make every ordinary day feel like an extraordinary adventure.</p>
+                        </div>
+                        <div class="back">
+                            <p>Thank you for all your patience, your sweet comforting hugs, and the million little ways you make me smile without even trying.</p>
+                        </div>
+                    </div>
+                    <!-- Page 2 -->
+                    <div class="page" style="--i:2">
+                        <div class="front">
+                            <p>May this year bring you all the endless joy, success, and love your beautiful heart can hold. You deserve the entire world!</p>
+                        </div>
+                        <div class="back">
+                            <p class="signature">Forever & always yours,<br><span class="heart-pulse">❤️</span> With all my love</p>
+                        </div>
+                    </div>
+                    <!-- Back Cover -->
+                    <div class="page cover-back" style="--i:3">
+                        <div class="front"></div>
+                        <div class="back">
+                            <h3>Happy Birthday Venu! 🎂</h3>
+                            <p>To infinity & beyond ✨</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6️⃣ Open When Letters -->
+    <section id="open-when" class="section">
+        <div class="container text-center">
+            <h2 class="section-title">Open When... 💌</h2>
+            <p class="section-subtitle">Click on any envelope whenever you need a reminder of how special you are.</p>
+            <div class="envelopes-grid">
+                <div class="envelope-item" onclick="openLetter('sad')">
+                    <div class="envelope">
+                        <div class="flap"></div>
+                        <div class="pocket"></div>
+                        <div class="letter-preview">You need a warm hug 🫂</div>
+                    </div>
+                    <p>...you feel down or sad</p>
+                </div>
+                <div class="envelope-item" onclick="openLetter('happy')">
+                    <div class="envelope">
+                        <div class="flap"></div>
+                        <div class="pocket"></div>
+                        <div class="letter-preview">Celebrate with me! 🥳</div>
+                    </div>
+                    <p>...you are super happy</p>
+                </div>
+                <div class="envelope-item" onclick="openLetter('miss')">
+                    <div class="envelope">
+                        <div class="flap"></div>
+                        <div class="pocket"></div>
+                        <div class="letter-preview">I'm right here 💖</div>
+                    </div>
+                    <p>...you miss me</p>
+                </div>
+                <div class="envelope-item" onclick="openLetter('bored')">
+                    <div class="envelope">
+                        <div class="flap"></div>
+                        <div class="pocket"></div>
+                        <div class="letter-preview">Secret Fun Fact 🐙</div>
+                    </div>
+                    <p>...you're feeling bored</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7️⃣ Why You're Special Carousel -->
+    <section id="reasons" class="section alt-bg">
+        <div class="container text-center">
+            <h2 class="section-title">Why You're So Special ✨</h2>
+            <p class="section-subtitle">Just a few of the infinite reasons I fall for you every day.</p>
+            <div class="carousel">
+                <div class="carousel-track-container">
+                    <ul class="carousel-track">
+                        <li class="carousel-slide current-slide">
+                            <div class="reason-card glass-card">
+                                <span class="reason-icon">😊</span>
+                                <h3>Your Smile</h3>
+                                <p>It literally lights up any room you walk into and instantly turns my whole day around.</p>
+                            </div>
+                        </li>
+                        <li class="carousel-slide">
+                            <div class="reason-card glass-card">
+                                <span class="reason-icon">💖</span>
+                                <h3>Your Beautiful Heart</h3>
+                                <p>So pure, warm, and gentle. You love deeply and make everyone around you feel truly cherished.</p>
+                            </div>
+                        </li>
+                        <li class="carousel-slide">
+                            <div class="reason-card glass-card">
+                                <span class="reason-icon">😂</span>
+                                <h3>Your Laugh</h3>
+                                <p>The most contagious, adorable sound in the universe. Hearing you giggle is pure therapy.</p>
+                            </div>
+                        </li>
+                        <li class="carousel-slide">
+                            <div class="reason-card glass-card">
+                                <span class="reason-icon">🌸</span>
+                                <h3>Your Cuteness</h3>
+                                <p>Even when you're sleepy or being dramatic, you are 1000% the most irresistible person alive.</p>
+                            </div>
+                        </li>
+                        <li class="carousel-slide">
+                            <div class="reason-card glass-card">
+                                <span class="reason-icon">✨</span>
+                                <h3>The Way You Love</h3>
+                                <p>Patient, supportive, and sincere. Being loved by you is the greatest happiness of my life.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <button class="carousel-button carousel-button--left is-hidden"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-button carousel-button--right"><i class="fas fa-chevron-right"></i></button>
+
+                <div class="carousel-nav">
+                    <button class="carousel-indicator current-slide"></button>
+                    <button class="carousel-indicator"></button>
+                    <button class="carousel-indicator"></button>
+                    <button class="carousel-indicator"></button>
+                    <button class="carousel-indicator"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8️⃣ Interactive Cake Ceremony -->
+    <section id="cake-section" class="section">
+        <div class="container text-center">
+            <h2 class="section-title">Make a Wish, Venu! 🎂</h2>
+            <p class="section-subtitle">Click or tap on the candle flames to blow them out!</p>
+
+            <div class="cake-container">
+                <div class="cake">
+                    <div class="plate"></div>
+                    <div class="layer layer-bottom"></div>
+                    <div class="layer layer-middle"></div>
+                    <div class="layer layer-top"></div>
+                    <div class="icing"></div>
+                    <div class="drip drip1"></div>
+                    <div class="drip drip2"></div>
+                    <div class="drip drip3"></div>
+
+                    <div class="candles">
+                        <div class="candle">
+                            <div class="flame"></div>
+                            <div class="smoke hidden"></div>
+                        </div>
+                        <div class="candle">
+                            <div class="flame"></div>
+                            <div class="smoke hidden"></div>
+                        </div>
+                        <div class="candle">
+                            <div class="flame"></div>
+                            <div class="smoke hidden"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="wish-message" class="hidden fade-in-up">
+                <div class="wish-card glass-card">
+                    <h3>✨ May all your beautiful dreams come true, Venu! ✨</h3>
+                    <p>You blew out all the candles! May this new year of your life be filled with endless magic, laughter, and happiness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9️⃣ A Gift For You 🎁 (Gift Box) -->
+    <section id="surprise" class="section alt-bg">
+        <div class="container text-center">
+            <h2 class="section-title">A Gift For Venu 🎁</h2>
+            <p class="section-subtitle">Tap the surprise box to open it!</p>
+
+            <div class="gift-container" id="gift-container">
+                <div class="gift-box">
+                    <div class="gift-lid">
+                        <div class="ribbon-bow"></div>
+                    </div>
+                    <div class="gift-body">
+                        <div class="ribbon-vertical"></div>
+                        <div class="ribbon-horizontal"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="confetti-container"></div>
+    </section>
+
+    <!-- 🔟 Footer & Flower Garden (Shows October 8th explicitly) -->
+    <footer>
+        <canvas id="flower-garden"></canvas>
+        <div class="footer-content">
+            <p>Made with endless <span class="heart-pulse">❤️</span> just for Venu.</p>
+            <p id="current-date">October 8th · Venu's Special Day ✨</p>
+        </div>
+    </footer>
+
+    <!-- Audio Visualizer Canvas -->
+    <canvas id="audio-visualizer"></canvas>
+
+    <!-- Overlay Surprise Message -->
+    <div id="popup-overlay" class="popup-overlay hidden">
+        <div class="popup-content glass-card">
+            <span id="close-popup" class="close-btn">&times;</span>
+            <div class="popup-icon">🎂🎉💖</div>
+            <h2>HAPPY BIRTHDAY VENU!</h2>
+            <p>You are loved more than words could ever say. Today and every day, you deserve the very best that life has to offer!</p>
+            <button class="glow-btn" onclick="document.getElementById('popup-overlay').classList.remove('show'); setTimeout(() => document.getElementById('popup-overlay').classList.add('hidden'), 300);">I Love You! ❤️</button>
+        </div>
+    </div>
+
+    <!-- 💌 Redesigned Open When Letter Modal with Perfect Alignment -->
+    <div id="letter-modal" class="popup-overlay hidden">
+        <div class="popup-content letter-modal-card glass-card">
+            <span class="close-btn" onclick="closeLetter()">&times;</span>
+            <div class="letter-stamp">💌 FROM MY HEART TO YOURS</div>
+            <h2 id="letter-title"></h2>
+            <div id="letter-body"></div>
+        </div>
+    </div>
+
+    <!-- Prize Voucher Modal (Wheel Game) -->
+    <div id="voucher-modal" class="popup-overlay hidden">
+        <div class="popup-content voucher-card glass-card">
+            <span class="close-btn" id="close-voucher">&times;</span>
+            <div class="voucher-stamp">OFFICIAL LOVE PASS</div>
+            <h3 id="voucher-title">Boyfriend Voucher</h3>
+            <p id="voucher-desc">Redeemable anytime with zero expiration!</p>
+            <div class="voucher-code" id="voucher-code">PASS-VENU-LOVE</div>
+            <button class="glow-btn" id="claim-voucher-btn">Claim Voucher 💖</button>
+        </div>
+    </div>
+
+    <!-- Game Win Modal -->
+    <div id="game-win-modal" class="popup-overlay hidden">
+        <div class="popup-content glass-card">
+            <div class="win-icon">🏆✨</div>
+            <h2>Queen of My Heart! 👑</h2>
+            <p>You scored 100+ points! You've unlocked unlimited kisses, warm hugs, and all the love in the universe forever!</p>
+            <button class="glow-btn" id="close-game-win-btn">Collect Reward 💖</button>
+        </div>
+    </div>
+
+    <!-- Floating Balloons Container -->
+    <div id="balloon-container"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
